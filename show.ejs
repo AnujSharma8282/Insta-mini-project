@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram user profile</title>
+  <link rel="icon" type="image/png" href="/insta.png">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous"/>
+    <link rel="stylesheet" href="/css/style2.css
+    ">
+</head>
+<body>
+
+  <header>
+    <h1 class="instagram-logo">Instagram</h1>
+  </header>
+
+  <div class="profile">
+    <img class="pfp" src="<%= instadata.pfp %>">
+    <h3><%= instadata.name %></h3>
+    <p class="bio"><%= instadata.bio %>
+        <br>
+        <br>
+        <a href="/<%=instadata.name%>/edit"><button id="edit">Edit profile  <i class="fa-solid fa-pencil"></i></button></a>
+    
+    <button><%= instadata.followers %> Followers</button>
+    <button><%= instadata.following %> Following</button>
+  </div>
+
+  <hr>
+
+  <div class="image-grid">
+    <% for(post of instadata.posts) { %>
+      <div class="post">
+        <img id="image" src="<%= post.image %>">
+        <div class="post-actions">
+          <i class="fa-regular fa-heart icon"></i>
+          <i class="fa-regular fa-comment"></i>
+        </div>
+        <div class="likes">
+            <span ><%= post.likes %></span>
+        <span><%= post.comments%> </span>
+        </div>
+       </div>
+    <% } %>
+  </div>
+  <script src="/js/app.js"></script>
+</body>
+</html>
