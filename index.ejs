@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Instagram - Home</title>
+  <link rel="icon" type="image/png" href="/insta.png">
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <h1 class="heading">Instagram</h1>
+
+  <div class="feed-container">
+    <% for (let post of random) { 
+         let i = Math.floor(Math.random() * post.posts.length); 
+    %>
+      <a href="/<%=post.name%>" class="user-card-link">
+        <div class="user-card">
+          <img class="pfp" src="<%= post.pfp %>" alt="profile pic" />
+          <button class="follow-btn">Follow</button>
+          <h2><%= post.name %></h2>
+          <div class="posts">
+            <div class="post">
+              <img class="post-img" src="<%= post.posts[i].image %>" alt="post" />
+              <div class="actions">
+                <button>❤️ <%= post.posts[i].likes %></button>
+                <button>💬 <%= post.posts[i].comments %></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </a>
+    <% } %>
+  </div>
+</body>
+</html>
