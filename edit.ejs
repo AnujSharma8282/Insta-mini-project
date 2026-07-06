@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit user</title>
+    <link rel="icon" type="image/png" href="/insta.png">
+    <link rel="stylesheet" href="/css/style3.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instagram</h1>
+    <img src="<%=instadata.pfp%>">
+    <h2><%= instadata.name %></h2>
+    <p><%= instadata.bio %></p>
+    <form method="POST" action="/<%=instadata.name%>?_method=PATCH">
+        <label for="user">Username</label>
+        <input id="user" type="text" placeholder="<%= instadata.name %>" name="username">
+        <label for="bio">Bio</label>
+        <textarea name="bio" id="bio"><%= instadata.bio %></textarea>
+        <button>Save changes</button>
+    </form>
+    </div>
+</body>
+</html>
